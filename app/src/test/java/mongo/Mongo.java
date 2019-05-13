@@ -1,8 +1,10 @@
 package mongo;
 
 import cn.com.feiqun.Application;
-import cn.com.feiqun.inter.UserRepository;
-import cn.com.feiqun.obj.User;
+import cn.com.feiqun.user.dao.MongodbLocationDao;
+import cn.com.feiqun.user.dao.MongodbUserDao;
+import cn.com.feiqun.user.obj.Location;
+import cn.com.feiqun.user.obj.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,15 +21,22 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class Mongo {
 
     @Autowired
-    UserRepository userRepository;
+    MongodbUserDao mongodbUserDao;
+    @Autowired
+    MongodbLocationDao mongodbLocationDao;
 
     @Test
     public void test() {
-        userRepository.deleteAll();
-        System.out.println(userRepository.save(new User("cn/com/feiqun", 29)));
-        System.out.println(userRepository.save(new User("wangcan", 29)));
-        System.out.println(userRepository.findUserByName("wangcan"));
-//        userRepository.delete(new User("cn/com/feiqun", 29));
+        mongodbUserDao.deleteAll();
+
+        mongodbUserDao.save(new User("feiqun", 28));
+        mongodbUserDao.save(new User("wangcan", 29));
+        System.out.println(mongodbUserDao.findUserByName("wangcan"));
+        System.out.println(mongodbUserDao.myFindAll());
+
+        mongodbLocationDao.deleteAll();
+        mongodbLocationDao.save(new Location("feiqun", 1.0, 2.0));
+        System.out.println(mongodbLocationDao.findAll());
 
     }
 }

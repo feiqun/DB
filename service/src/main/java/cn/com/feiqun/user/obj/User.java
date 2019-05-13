@@ -1,4 +1,5 @@
-package cn.com.feiqun.obj;
+package cn.com.feiqun.user.obj;
+
 
 import lombok.Data;
 
@@ -16,9 +17,6 @@ public class User {
 
     public String name;
     public Integer age;
-
-    public User() {
-    }
 
     public User(String name, Integer age) {
         this.name = name;

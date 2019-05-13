@@ -1,7 +1,7 @@
-package cn.com.feiqun.inter;
+package cn.com.feiqun.user.repository;
 
 
-import cn.com.feiqun.obj.User;
+import cn.com.feiqun.user.obj.Location;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
@@ -11,6 +11,5 @@ import org.springframework.stereotype.Repository;
  * @desc
  */
 @Repository
-public interface UserRepository extends MongoRepository<User, String> {
-    User findUserByName(String name);
+public interface LocationRepository extends MongoRepository<Location, String> {
 }
