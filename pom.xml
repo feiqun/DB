@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>cn.com.feiqun</groupId>
-    <artifactId>feiqun-study</artifactId>
+    <artifactId>mongoDB</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
