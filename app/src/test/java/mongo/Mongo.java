@@ -26,7 +26,7 @@ public class Mongo {
     MongodbLocationDao mongodbLocationDao;
 
     @Test
-    public void test() {
+    public void test()   {
         mongodbUserDao.deleteAll();
 
         mongodbUserDao.save(new User("feiqun", 28));
